@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="2">
+  <Devices>
+    <DeviceDefinition DeviceAlias="Device001" RestoreParameters="true">
+      <DeviceName>Benchtop Stepper Motor Controller</DeviceName>
+      <SerialNo>70867111-2</SerialNo>
+      <DevicePrefix>70</DevicePrefix>
+      <Actuator>NRT100 Enc Stage 100mm</Actuator>
+    </DeviceDefinition>
+  </Devices>
+  <SequenceEventCollection>
+    <SequenceElements xsi:type="Event" Name="Event">
+      <Description />
+      <DeviceSequences>
+        <Device DeviceName="Device001">
+          <DeviceActions>
+            <Action FunctionName="MoveContinuousAt">
+              <Parameters>
+                <NameValuePairOfObject Name="MaxVelocity">
+                  <Value xsi:type="xsd:decimal">4</Value>
+                </NameValuePairOfObject>
+                <NameValuePairOfObject Name="Acceleration">
+                  <Value xsi:type="xsd:decimal">0.5</Value>
+                </NameValuePairOfObject>
+                <NameValuePairOfObject Name="Direction">
+                  <Value xsi:type="xsd:int">1</Value>
+                </NameValuePairOfObject>
+              </Parameters>
+            </Action>
+            <Action FunctionName="MoveTo">
+              <Parameters>
+                <NameValuePairOfObject Name="MoveTo">
+                  <Value xsi:type="xsd:decimal">25</Value>
+                </NameValuePairOfObject>
+              </Parameters>
+            </Action>
+          </DeviceActions>
+        </Device>
+      </DeviceSequences>
+    </SequenceElements>
+  </SequenceEventCollection>
+  <RepeatCount>1</RepeatCount>
+  <RepeatContinuously>true</RepeatContinuously>
+  <RepeatRun>true</RepeatRun>
+</Sequence>
